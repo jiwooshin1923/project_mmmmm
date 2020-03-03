@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈"/>
+    <item
+        android:id="@+id/action_search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="검색"/>
+<item
+    android:id="@+id/action_add"
+    android:enabled="true"
+    android:icon="@drawable/ic_add_black_24dp"
+    android:title="게시물올리기"/>
+    <item
+        android:id="@+id/action_alarm"
+        android:enabled="true"
+        android:icon="@drawable/ic_invert_colors_black_24dp"
+        android:title="알람"/>
+    <item
+        android:id="@+id/action_person"
+        android:enabled="true"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="계정"/>
+
+
+</menu>
