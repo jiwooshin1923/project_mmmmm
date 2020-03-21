@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -26,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
 
-    private Button button1;
-    private Button comment;
-
-
     private Frag1 frag1;
     private Frag2 frag2;
     private Frag3 frag3;
@@ -40,50 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        button1 = (Button)findViewById(R.id.button1) ;
-
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                v.setSelected(!v.isSelected());//버튼 선택여부 반전
-                // if (v.isSelected()) {//현재 눌린상태
-
-                if (button1.isSelected()) {
-                    button1.setSelected(true);
-                }
-                else{
-                    button1.setSelected(false);
-                }
-                // button1.callOnClick();
-
-
-   /*      //현재 좋아요 개수 파악 +1 재설정
-         int count = Integer.parseInt(좋아요개수변수.getText().toString());
-         좋아요변수.setText(Integer.toString(++count));
-     }
-     else{
-         //현재 좋아요 개수 파악 -1 값으로 재설정
-         int count = Integer.parseInt(좋아요개수변수.getText().toString());
-         좋아요개수변수.setText(Integer.toString(--count));
-     }*/
-
-            }
-
-        });
-
-   comment = (Button)findViewById(R.id.comment);
-   comment.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View v) {
-           Intent intent= new Intent(MainActivity.this, comment_main.class);
-
-           startActivity(intent); //액티비티 이동
-       }
-   });
 
 
         bottomNavigationView = findViewById(R.id.bottomNavi);
@@ -159,5 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getSu
+        return super.onCreateOptionsMenu(menu);
+    }*/
 }
 
