@@ -7,5 +7,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3번화면 입니다."
-        android:textSize="40sp"/>
+        android:textSize="40sp" />
 </LinearLayout>

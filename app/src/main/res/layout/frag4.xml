@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="4번화면 입니다."
-        android:textSize="40sp"/>
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:text="알람"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+      <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableTop="@drawable/ic_follow_black_24dp"
+      android:drawablePadding="4dp"
+          android:background="#00ff0000"
+      android:text="팔로워"
+          android:layout_weight="1"
+      />
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_favorite_border_black_24dp"
+          android:drawablePadding="4dp"
+          android:background="#00ff0000"
+          android:text="좋아요"
+          android:layout_weight="1"
+          />
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_at"
+          android:drawablePadding="4dp"
+          android:background="#00ff0000"
+          android:text="태그"
+          android:layout_weight="1"
+          />
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_search_black_24dp"
+          android:drawablePadding="4dp"
+          android:background="#00ff0000"
+          android:text="댓글"
+          android:layout_weight="1"
+          />
+
+  </LinearLayout>
+
+    <ListView
+        android:id="@+id/a_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </ListView>
+
 </LinearLayout>
