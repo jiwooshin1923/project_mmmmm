@@ -2,36 +2,36 @@ package com.example.project_m;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTabHost;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toolbar;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+
+import com.example.project_m.Fragment.Frag1;
+import com.example.project_m.Fragment.Frag2;
+import com.example.project_m.Fragment.Frag3;
+import com.example.project_m.Fragment.Frag4;
+import com.example.project_m.Fragment.Frag5;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
 
 //프래그먼트1번째화면에 버튼 다 넣기
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
     private FragmentTransaction ft;
+
+ /*   private VideoView videoView;  //비디오를 실행할수있게 도와주는뷰
+    private MediaController mediaController; //재생이나 정지와 같은 미디어 제어 버튼부를 담당
+    private String videoURL="http://www.radiantmediaplayer.com/media/bbb-360p.mp4";*/
 
     private Frag1 frag1;
     private Frag2 frag2;
@@ -42,14 +42,19 @@ public class MainActivity extends AppCompatActivity{
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {//앱이 첫 실행됬을때 이곳을 수행
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        frag1 =new Frag1();
+        frag2 =new Frag2();
+        frag3 =new Frag3();
+        frag4 =new Frag4();
+        frag5 =new Frag5();
 
 // 하단
         bottomNavigationView = findViewById(R.id.bottomNavi);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
             @Override
@@ -78,21 +83,13 @@ public class MainActivity extends AppCompatActivity{
                 return true;
             }
         });
-        frag1 =new Frag1();
-        frag2 =new Frag2();
-        frag3 =new Frag3();
-        frag4 =new Frag4();
-        frag5 =new Frag5();
+
         setFrag(0);  //첫 프래그먼트 화면을 무엇으로 지정해줄지 선택
 
 
 
 
     }
-
-
-
-
 
     //프래그 먼트 교체가 일어나는 실행문이다.
     private void setFrag(int n){
@@ -123,11 +120,5 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getSu
-        return super.onCreateOptionsMenu(menu);
-    }*/
 }
 

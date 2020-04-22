@@ -1,4 +1,4 @@
-package com.example.project_m;
+package com.example.project_m.Fragment;
 
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
@@ -14,10 +14,11 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
+
 import androidx.fragment.app.Fragment;
 
 import com.example.project_m.R;
+import com.example.project_m.comment_main;
 
 public class Frag1 extends Fragment {
 
@@ -36,7 +37,7 @@ public class Frag1 extends Fragment {
             @Override
             public void onClick(View v) {
                 v.setSelected(!v.isSelected());//버튼 선택여부 반전
-                // if (v.isSelected()) {//현재 눌린상태
+               //  if (v.isSelected()) {//현재 눌린상태
 
                 if (button1.isSelected()) {
                     button1.setSelected(true);
@@ -44,10 +45,10 @@ public class Frag1 extends Fragment {
                 else{
                     button1.setSelected(false);
                 }
-                // button1.callOnClick();
+               //  button1.callOnClick();
 
 
-   /*      //현재 좋아요 개수 파악 +1 재설정
+     /*   //현재 좋아요 개수 파악 +1 재설정
          int count = Integer.parseInt(좋아요개수변수.getText().toString());
          좋아요변수.setText(Integer.toString(++count));
      }
@@ -65,7 +66,7 @@ public class Frag1 extends Fragment {
        comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),comment_main.class);
+                Intent intent = new Intent(getActivity(), comment_main.class);
                 startActivity(intent);
             }
         });
@@ -85,12 +86,7 @@ public class Frag1 extends Fragment {
         });
 
 
-     /*   public void oncreateoptionsMenu(Menu menu){
-            super.onCreateOptionsMenu(menu, inflater);
-        }
-        ActionBar actionBar=((MainActivity)getActivity()).getSupportActionBar();
-        actionBar.setTitle("연습용액션바");
-        actionBar.setDisplayHomeAsUpEnabled(false);//뒤로가기 버튼*/
+    
          return rootView;
     }
 
