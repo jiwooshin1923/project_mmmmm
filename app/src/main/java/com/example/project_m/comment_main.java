@@ -25,10 +25,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+
+
 public class comment_main extends AppCompatActivity {
     private ListView listview ;
     private ArrayAdapter adapter ;
-    private ArrayList<String> items = new ArrayList<String>() ;
+    private ArrayList<String> items = new ArrayList<String>() ;//어댑터
     private final String fileName = "items.list";
 
 
@@ -42,7 +44,7 @@ public class comment_main extends AppCompatActivity {
 
         //리스트뷰와 어댑터 초기화
         listview = (ListView) findViewById(R.id.listview1) ;
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items) ;
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, items) ;
 
         listview.setAdapter(adapter) ;
 

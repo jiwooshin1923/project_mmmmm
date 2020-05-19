@@ -19,8 +19,8 @@
 
         <ListView
             android:id="@+id/listview1"
-            android:layout_width="match_parent"
-            android:layout_height="598dp"
+            android:layout_width="424dp"
+            android:layout_height="455dp"
             android:layout_weight="1"
             android:choiceMode="singleChoice" />
 

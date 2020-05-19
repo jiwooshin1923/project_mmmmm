@@ -19,6 +19,8 @@ import com.example.project_m.Fragment.Frag4;
 import com.example.project_m.Fragment.Frag5;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 //프래그먼트1번째화면에 버튼 다 넣기
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {//앱이 첫 실행됬을때 이곳을 수행
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         frag1 =new Frag1();
         frag2 =new Frag2();
