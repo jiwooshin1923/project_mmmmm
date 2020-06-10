@@ -33,10 +33,9 @@
               android:stateListAnimator="@null" />
 
         <Button
-            android:id="@+id/button3"
             android:layout_width="55dp"
             android:layout_height="34dp"
-
+            android:id="@+id/button3"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
@@ -123,6 +122,17 @@
             android:layout_marginRight="31dp"
             style="?android:attr/borderlessButtonStyle"
         android:background="@drawable/ic_add_black_24dp" />
+
+        <Button
+            android:id="@+id/DM_btn"
+            android:layout_width="48dp"
+            android:layout_height="38dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="21dp"
+            android:background="@drawable/ic_dm"
+            android:stateListAnimator="@null" />
 
 
     </RelativeLayout>

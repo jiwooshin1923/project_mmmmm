@@ -1,7 +1,7 @@
-package com.example.project_m.comment;
+package com.example.project_m.DM;
 
 
-public class Comment_Data {
+public class DM_Data {
     private String comment;
     private String nickname;
 

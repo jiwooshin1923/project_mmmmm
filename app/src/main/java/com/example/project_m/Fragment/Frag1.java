@@ -1,30 +1,21 @@
 package com.example.project_m.Fragment;
 
 import android.content.Intent;
-import android.content.pm.ResolveInfo;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
+import androidx.annotation.BinderThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.project_m.DM.DM_activity;
 import com.example.project_m.R;
-import com.example.project_m.comment.Comment_activity;
-import com.example.project_m.comment_main;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.List;
+import com.example.project_m.comment_list.comment_main;
 
 public class Frag1 extends Fragment {
 
@@ -34,11 +25,27 @@ public class Frag1 extends Fragment {
     private  Button button3;
     private String subject = "메시지 제목";
     private String text = "메시지 내용은 \n다음줄에서...";
+
+    private Button DM_btn;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
      ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.frag1,container,false)  ;
 
+
+
+        DM_btn= rootView.findViewById((R.id.DM_btn));
+        DM_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), DM_activity.class);
+                startActivity(intent);
+
+
+            }
+        });
 
 
 
@@ -80,7 +87,7 @@ public class Frag1 extends Fragment {
        comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Comment_activity.class);
+                Intent intent = new Intent(getActivity(), comment_main.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.project_m.comment;
+package com.example.project_m.DM;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.project_m.R;
 import com.google.firebase.database.ChildEventListener;
@@ -23,12 +24,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Comment_activity extends AppCompatActivity {
+public class DM_activity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-   private List<Comment_Data> commentList;
+   private List<DM_Data> commentList;
+
 private String nick ="nick_jiwoo";
 
 private DatabaseReference myRef;
@@ -50,10 +52,11 @@ private Button Button_send;
           String comment= EditText_comment.getText().toString();
 
           if(comment !=null){
-              Comment_Data chat =new Comment_Data();
+              DM_Data chat =new DM_Data();
               chat.setNickname(nick);
               chat.setComment(comment);
               myRef.push().setValue(chat);
+              EditText_comment.setText("");
           }
 
             }
@@ -61,15 +64,35 @@ private Button Button_send;
         mRecyclerView= findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
-        mLayoutManager=new LinearLayoutManager(this);
+        mLayoutManager=new LinearLayoutManager(this);  //레이아웃 설정
         mRecyclerView.setLayoutManager(mLayoutManager);
     //리사이클러뷰 세팅
 
 
-        commentList=new ArrayList<>();
-        mAdapter=new Comment_Adapter(commentList, Comment_activity.this,nick);
+        commentList=new ArrayList<>(); //DM_Data 객체 (닉네임,댓글)넣기
 
+
+        //adapter 생성
+        mAdapter=new DM_Adapter(commentList, DM_activity.this,nick);
         mRecyclerView.setAdapter(mAdapter);
+
+     ItemClickSupport.addTo(mRecyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener(){
+
+                 @Override
+               public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                              Toast.makeText(DM_activity.this, "클릭한 아이템의 이름은 " + commentList.get(position).getComment(), Toast.LENGTH_SHORT).show();
+                 }
+              });
+
+        ItemClickSupport.addTo(mRecyclerView).setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+                Toast.makeText(DM_activity.this, "길게 눌렀구나 " + commentList.get(position).getComment(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
+
 
 
         //파베 설정
@@ -77,18 +100,18 @@ private Button Button_send;
          myRef = database.getReference();
 
 
-      /* Comment_Data chat =new Comment_Data();
+      /* DM_Data chat =new DM_Data();
         chat.setNickname(nick);
         chat.setComment("hi");
         myRef.setValue(chat);*/
 
-
+  //파베
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Log.d("CHATCHAT", dataSnapshot.getValue().toString());
-              Comment_Data chat=   dataSnapshot.getValue(Comment_Data.class);
-                ((Comment_Adapter) mAdapter).addComment(chat);
+              DM_Data chat=   dataSnapshot.getValue(DM_Data.class);
+                ((DM_Adapter) mAdapter).addComment(chat);
 
             }
 
