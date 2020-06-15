@@ -10,6 +10,8 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+    <!-- Base application theme. -->
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

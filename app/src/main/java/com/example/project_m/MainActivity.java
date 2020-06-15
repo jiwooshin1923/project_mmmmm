@@ -1,26 +1,20 @@
 package com.example.project_m;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.MediaController;
-import android.widget.VideoView;
-
 
 import com.example.project_m.Fragment.Frag1;
 import com.example.project_m.Fragment.Frag2;
 import com.example.project_m.Fragment.Frag3;
 import com.example.project_m.Fragment.Frag4;
 import com.example.project_m.Fragment.Frag5;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 
 //프래그먼트1번째화면에 버튼 다 넣기
@@ -43,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {//앱이 첫 실행됬을때 이곳을 수행
         super.onCreate(savedInstanceState);
@@ -61,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavi);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+
+
+
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
@@ -95,7 +95,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.select_menu, menu);
+        return true;
+    }
 
+
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+         }
     //프래그 먼트 교체가 일어나는 실행문이다.
     private void setFrag(int n){
         fm=getSupportFragmentManager();
@@ -123,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+
     }
+
 
 }
 

@@ -18,6 +18,10 @@ import java.util.List;
 public class Comment_Adapter extends RecyclerView.Adapter<Comment_Adapter.MyViewHolder> {
     private List<Comment_Data> mDataset;
     private String myNickName;
+
+    public Comment_Adapter(List<com.example.project_m.comment.Comment_Data> commentList, com.example.project_m.comment.Comment_activity context, String nick) {
+    }
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder

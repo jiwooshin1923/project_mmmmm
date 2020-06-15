@@ -4,15 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.project_m.R;
 import com.example.project_m.search.search_frag1;
@@ -24,7 +19,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class Frag2 extends Fragment {
 
-    private search_frag1 s_frag1;  //검색 탭프래그먼트
+    private search_frag1 s_frag1; //검색 탭프래그먼트
     private search_frag2 s_frag2;
     private search_frag3 s_frag3;
     private search_frag4 s_frag4;

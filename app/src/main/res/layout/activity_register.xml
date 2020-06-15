@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="100dp">
+
+        <TextView
+            android:text="회원가입"
+            android:textSize="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="이름"
+            android:textColor="@color/cardview_dark_background"
+            android:gravity="right"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/tv_name"
+            android:hint="Name"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="나이"
+            android:textColor="@color/cardview_dark_background"
+            android:gravity="right"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/tv_age"
+            android:hint="Age"
+            android:inputType="number"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="이메일"
+            android:textColor="@color/cardview_dark_background"
+            android:gravity="right"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/tv_email"
+            android:hint="Email"
+            android:ems="20"
+            android:inputType="textEmailAddress"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="암호"
+            android:textColor="@color/cardview_dark_background"
+            android:gravity="right"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/tv_password"
+            android:hint="Password"
+            android:ems="8"
+            android:inputType="textPassword"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/bt_join_ok"
+            android:text="확인"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/bt_join_cancel"
+            android:text="취소"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
