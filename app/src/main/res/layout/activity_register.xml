@@ -31,7 +31,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/tv_name"
+            android:id="@+id/register_name"
             android:hint="Name"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/tv_age"
+            android:id="@+id/register_age"
             android:hint="Age"
             android:inputType="number"
             android:layout_width="200dp"
@@ -67,7 +67,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/tv_email"
+            android:id="@+id/register_email"
             android:hint="Email"
             android:ems="20"
             android:inputType="textEmailAddress"
@@ -86,7 +86,7 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/tv_password"
+            android:id="@+id/register_password"
             android:hint="Password"
             android:ems="8"
             android:inputType="textPassword"
@@ -101,12 +101,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/bt_join_ok"
+            android:id="@+id/register_join_ok"
             android:text="확인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/bt_join_cancel"
+            android:id="@+id/register_join_cancel"
             android:text="취소"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

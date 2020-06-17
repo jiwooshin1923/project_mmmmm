@@ -7,15 +7,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
     TextView text;
     TextInputEditText TextInputEditText_email, TextInputEditText_password;
     RelativeLayout RelativeLayout_login;
+    FirebaseAuth firebaseAuth;
 
     @Override
 
@@ -28,7 +33,7 @@ public class Login extends AppCompatActivity {
         TextInputEditText_email = findViewById(R.id.TextInputEditText_email);
         TextInputEditText_password = findViewById(R.id.TextInputEditText_password);
         RelativeLayout_login = findViewById(R.id.RelativeLayout_login);
-
+        firebaseAuth = firebaseAuth.getInstance();
 
         RelativeLayout_login.setClickable(true); //버튼 활성화
         text = (TextView) findViewById(R.id.register);
@@ -45,19 +50,21 @@ public class Login extends AppCompatActivity {
         RelativeLayout_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = TextInputEditText_email.getText().toString().trim();
+                String pwd = TextInputEditText_password.getText().toString().trim();
 
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
-                String email = TextInputEditText_email.getText().toString();
-                String password = TextInputEditText_password.getText().toString();
-
-                if (TextInputEditText_email.getText().toString().equals("1234") && TextInputEditText_password.getText().toString().equals("1234")) {//로그인 성공
-                    Intent intent = new Intent(Login.this, MainActivity.class); //인텐트를 이용한 화면넘기기
-                    startActivity(intent); //실행
-                } else
-
-
-                    Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
+                firebaseAuth.signInWithEmailAndPassword(email, pwd)
+                        .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(Login.this, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(Login.this, "로그인 오류", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
 
 
             }
