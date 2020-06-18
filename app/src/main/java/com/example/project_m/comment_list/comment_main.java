@@ -1,13 +1,16 @@
-package com.example.project_m;
+package com.example.project_m.comment_list;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -18,6 +21,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project_m.DM.DM_activity;
+import com.example.project_m.R;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,12 +31,26 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
+
+
 public class comment_main extends AppCompatActivity {
     private ListView listview ;
     private ArrayAdapter adapter ;
-    private ArrayList<String> items = new ArrayList<String>() ;
+    private ArrayList<String> items = new ArrayList<String>() ;//어댑터
     private final String fileName = "items.list";
+    private Toolbar c_toolbar;
+    private Button DM_btn;
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item ){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         return inflater.inflate(R.layout.comment_main,container,false);
@@ -40,9 +60,31 @@ public class comment_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comment_main);
 
+
+        c_toolbar=  (Toolbar) findViewById(R.id.c_toolbar);
+        setSupportActionBar(c_toolbar);
+       // getSupportActionBar().setIcon(R.drawable.ic_logo); // 타이틀 대신 로고를 추가
+        getSupportActionBar().setDisplayShowTitleEnabled(false); // 타이틀 이름 안보이게
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // 뒤로가기
+
+        DM_btn= findViewById((R.id.DM_btn));
+        DM_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), DM_activity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
+
+
         //리스트뷰와 어댑터 초기화
         listview = (ListView) findViewById(R.id.listview1) ;
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items) ;
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, items) ;
 
         listview.setAdapter(adapter) ;
 

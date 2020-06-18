@@ -4,8 +4,49 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3번화면 입니다."
-        android:textSize="40sp" />
+
+        android:text="Hello Storage!" />
+
+    <!--이미지 출력-->
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1">
+
+        <VideoView
+            android:layout_width="wrap_content"
+            android:layout_height="240dp"
+            android:id="@+id/videoView"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/bt_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동영상 선택" />
+
+        <Button
+            android:id="@+id/bt_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동영상 업로드" />
+
+    </LinearLayout>
+
+
 </LinearLayout>

@@ -5,29 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".comment_main">
+    tools:context=".comment_list.comment_main"
+    >
+
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/c_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_logo" />
+
+        <Button
+            android:id="@+id/DM_btn"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:background="@drawable/ic_dm" />
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@id/c_toolbar"
+      >
 
 
         <ListView
             android:id="@+id/listview1"
-            android:layout_width="match_parent"
-            android:layout_height="598dp"
-            android:layout_weight="1"
-            android:choiceMode="singleChoice" />
+            android:layout_width="424dp"
+            android:layout_height="455dp"
+            android:layout_weight="6"
+            android:choiceMode="singleChoice"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <EditText
                 android:layout_width="0dp"

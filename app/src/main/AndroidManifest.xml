@@ -11,9 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+       <activity android:name=".comment.Comment_activity">
+
+        </activity>
         <activity android:name=".search.search_frag1" />
         <activity android:name=".comment_main" />
-        <activity
+
+      <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
