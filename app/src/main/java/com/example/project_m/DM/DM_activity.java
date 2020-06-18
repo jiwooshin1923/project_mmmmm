@@ -1,16 +1,16 @@
 package com.example.project_m.comment;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.project_m.R;
 import com.google.firebase.database.ChildEventListener;
@@ -73,8 +73,8 @@ private Button Button_send;
 
 
         //파베 설정
-               FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+         myRef = database.getReference();
 
 
       /* Comment_Data chat =new Comment_Data();
@@ -87,7 +87,7 @@ private Button Button_send;
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Log.d("CHATCHAT", dataSnapshot.getValue().toString());
-              Comment_Data chat =   dataSnapshot.getValue(Comment_Data.class);
+              Comment_Data chat=   dataSnapshot.getValue(Comment_Data.class);
                 ((Comment_Adapter) mAdapter).addComment(chat);
 
             }

@@ -33,7 +33,7 @@
             android:id="@+id/Button_send"
             android:text="SEND"
             android:layout_width="80dp"
-            android:layout_height="match_parent" />
+            android:layout_height="60dp" />
     </LinearLayout>
 
 </LinearLayout>
